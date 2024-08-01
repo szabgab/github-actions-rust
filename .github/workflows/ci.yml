@@ -8,8 +8,8 @@ jobs:
       matrix:
         rust:
           - stable
-            # - beta
-            # - nightly
+          - beta
+          - nightly
     name: ${{matrix.rust}}
     runs-on: ubuntu-latest
     steps:
@@ -18,8 +18,6 @@ jobs:
         with:
           toolchain: ${{matrix.rust}}
           components: rustfmt, clippy
-      - run: |
-          rustup
       - run: rustup --version
       - run: rustc -vV
 

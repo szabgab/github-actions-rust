@@ -1,17 +1,16 @@
-name: main
+name: Simple
 on:
   - pull_request
   - push
 jobs:
   main:
-    name: Simple
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - run: rustup --version
       - run: rustc -vV
 
-      - run: cargo clippy -- -W clippy::pedantic
+      - run: cargo clippy -- --deny clippy::pedantic
       - run: cargo fmt --all -- --check
       - run: cargo test
 

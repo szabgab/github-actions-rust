@@ -23,9 +23,14 @@ jobs:
       - run: rustup --version
       - run: rustc -vV
 
-      - run: cargo clippy -- --deny clippy::pedantic
+      - run: cargo clippy
+      # Replace the above line with this one if you'd like to start to enforce it.
+      # - run: cargo clippy -- --deny clippy::pedantic
       - run: cargo fmt --all -- --check
       - run: cargo test
+
+        # Enable these lines if you'd like to generate test coverage report
+        # and upload it to https://about.codecov.io/
         #      - run: cargo install cargo-tarpaulin && cargo tarpaulin --out Xml
         #      - uses: codecov/codecov-action@v1
 

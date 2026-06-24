@@ -2,6 +2,7 @@ name: Default on macOS
 on:
   - pull_request
   - push
+  - workflow_dispatch
 jobs:
   main:
     runs-on: macos-latest

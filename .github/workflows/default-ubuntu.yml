@@ -2,6 +2,7 @@ name: Default on Ubuntu
 on:
   - pull_request
   - push
+  - workflow_dispatch
 jobs:
   main:
     runs-on: ubuntu-latest

@@ -2,6 +2,7 @@ name: Matrix
 on:
   - pull_request
   - push
+  - workflow_dispatch
 jobs:
   main:
     strategy:
@@ -10,8 +11,7 @@ jobs:
           - stable
           - beta
           - nightly
-          - 1.78
-          - 1.88
+          - 1.96
     name: ${{matrix.rust}}
     runs-on: ubuntu-latest
     steps:
